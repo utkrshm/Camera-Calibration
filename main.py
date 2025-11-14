@@ -1,4 +1,3 @@
-import glob
 import os
 
 import cv2
@@ -91,15 +90,7 @@ def remove_distortion(cam_matrix, distance_coeff):
     
     plt.show()
     
-
-def run_calibration():
-    calibrate()
-    
-def run_remove_distortion():
-    cam_matrix, distance_coeffs = calibrate()
-    remove_distortion(cam_matrix, distance_coeffs)
-    
     
 if __name__ == "__main__":
-    run_calibration()
-    run_remove_distortion()
+    cam_matrix, distance_coeffs = calibrate()
+    remove_distortion(cam_matrix, distance_coeffs)
